@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>스트리밍 테스트</title>
+  <style>
+    body { font-family: -apple-system, "Malgun Gothic", sans-serif; max-width: 520px; margin: 24px auto; padding: 0 16px; }
+    button { padding: 8px 14px; margin: 0 6px 8px 0; cursor: pointer; }
+    button:disabled { cursor: not-allowed; }
+    #log { background: #111; color: #9f9; padding: 12px; height: 320px; overflow-y: auto; white-space: pre-wrap; font-size: 13px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h3>SignalR 스트리밍</h3>
+
+  <button disabled onclick="startCounter(10, 500)">서버→클라 시작 (10개)</button>
+  <button disabled onclick="stopCounter()">취소</button>
+  <button disabled onclick="startUpload()">클라→서버 업로드</button>
+
+  <pre id="log"></pre>
+
+  <!-- signalR 라이브러리가 먼저, stream.js가 나중 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+  <script src="/js/stream.js"></script>
+</body>
+</html>
